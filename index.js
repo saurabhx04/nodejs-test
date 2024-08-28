@@ -2,12 +2,18 @@
 const express= require ('express');
 const port = 8000; 
 const app = express();
-app.get('/', function(request, response){
-    response.send("Hello Shalini the paglu!");
+app.get('/', (req, res) => {
+    res.send("Hello Shalini the paglu!");
 });
 
-app.post('addemployee', function(){} );
+//app.post('addemployee', () => {} );
 
-app.listen(port, function(){
-    console.log("App is listening " + port);
+app.post('/addemployee', (req, res) => {
+    let empName = req.body.empName;
+    let emppass = req.body.empPass;
+    res.send(`Got a Post request`)
+});
+
+app.listen(port, () => {
+    console.log(`App is listening on ${port}`);
 });
