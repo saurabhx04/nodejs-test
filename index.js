@@ -2,6 +2,9 @@
 const express= require ('express');
 const port = 8000; 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
 app.get('/', (req, res) => {
     res.send("Hello Shalini the paglu!");
 });
@@ -11,7 +14,7 @@ app.get('/', (req, res) => {
 app.post('/addemployee', (req, res) => {
     let empName = req.body.empName;
     let emppass = req.body.empPass;
-    res.send(`Got a Post request`)
+    res.end(`Psot succcess, you sent ${empName} and ${emppass}, thanks! `)
 });
 
 app.listen(port, () => {
