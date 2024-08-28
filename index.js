@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended:false}));
 
 
 router.get('/', (req, res) => {
-    res.send("Hello Shalini the paglu!");
+    res.send("Hello there");
 });
 
 router.get('/aboutus', (req, res) => {
