@@ -1,3 +1,4 @@
+const Employee = require('../models/employee');
 exports.getdefaults = (req, res) => {
     res.send('Hello from Saurabh');
 };
